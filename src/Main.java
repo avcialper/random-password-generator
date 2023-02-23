@@ -51,7 +51,8 @@ public class Main extends javax.swing.JFrame {
         generate = new javax.swing.JButton();
         output = new javax.swing.JTextField();
         coppy = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RANDOM PASSWORD GENERATOR");
@@ -77,7 +78,7 @@ public class Main extends javax.swing.JFrame {
         passwordLengthTxt.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         passwordLengthTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
         jPanel1.add(passwordLengthTxt);
-        passwordLengthTxt.setBounds(340, 40, 60, 30);
+        passwordLengthTxt.setBounds(350, 40, 60, 30);
 
         lowerCase.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         lowerCase.setText("Lower Case");
@@ -135,9 +136,15 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(coppy);
         coppy.setBounds(390, 200, 30, 24);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/randomBG.jpg"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 600, 262);
+        jLabel2.setBackground(new java.awt.Color(242, 144, 59));
+        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
+        jLabel2.setOpaque(true);
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(340, 40, 20, 30);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/randomBG.jpg"))); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 600, 262);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,9 +211,10 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton coppy;
     private javax.swing.JButton generate;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JCheckBox lowerCase;
     private javax.swing.JCheckBox number;
