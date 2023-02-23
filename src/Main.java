@@ -14,7 +14,6 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon/padlock.png")));
     }
-    
     Random random = new Random();
     // Character values.
     static String upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -26,149 +25,151 @@ public class Main extends javax.swing.JFrame {
     public void generatePassword(){
         String passwordChars = "";
         String password = "";
-        if(upperCaseCB.isSelected())
+        if(upperCase.isSelected())
             passwordChars += upperCaseChars;
-        if(lowerCaseCB.isSelected())
+        if(lowerCase.isSelected())
             passwordChars += lowerCaseChars;
-        if(numberCB.isSelected())
+        if(number.isSelected())
             passwordChars += numberChars;
-        if(specialChractersCB.isSelected())
+        if(specialCharacters.isSelected())
             passwordChars += specialChars;
-        int passwordLength = Integer.parseInt(passwordLengthText.getText());
+        int passwordLength = Integer.parseInt(passwordLengthTxt.getText());
         for(int i = 0; i < passwordLength; i++)
             password += passwordChars.charAt(random.nextInt(passwordChars.length()));
-        passwordOutput.setText(password);
+        output.setText(password);
     }
-    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        passwordLengthLabel = new javax.swing.JLabel();
+        passwordLengthTxt = new javax.swing.JTextField();
+        lowerCase = new javax.swing.JCheckBox();
+        upperCase = new javax.swing.JCheckBox();
+        number = new javax.swing.JCheckBox();
+        specialCharacters = new javax.swing.JCheckBox();
+        generate = new javax.swing.JButton();
+        output = new javax.swing.JTextField();
+        coppy = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        passwordLengthText = new javax.swing.JTextField();
-        lowerCaseCB = new javax.swing.JCheckBox();
-        upperCaseCB = new javax.swing.JCheckBox();
-        numberCB = new javax.swing.JCheckBox();
-        specialChractersCB = new javax.swing.JCheckBox();
-        generateButton = new javax.swing.JButton();
-        passwordOutput = new javax.swing.JTextField();
-        copyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RANDOM PASSWORD GENERATOR");
-        setBounds(new java.awt.Rectangle(300, 200, 0, 0));
+        setBackground(new java.awt.Color(255, 0, 51));
+        setBounds(new java.awt.Rectangle(300, 200, 600, 260));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(600, 280));
+        setPreferredSize(new java.awt.Dimension(600, 300));
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel1.setText("Password Length :");
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 300));
+        jPanel1.setLayout(null);
 
-        passwordLengthText.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        passwordLengthLabel.setBackground(new java.awt.Color(242, 144, 59));
+        passwordLengthLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        passwordLengthLabel.setText("Password Length :");
+        passwordLengthLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
+        passwordLengthLabel.setOpaque(true);
+        jPanel1.add(passwordLengthLabel);
+        passwordLengthLabel.setBounds(170, 40, 180, 30);
 
-        lowerCaseCB.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        lowerCaseCB.setText("Lower Case");
+        passwordLengthTxt.setBackground(new java.awt.Color(242, 144, 59));
+        passwordLengthTxt.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        passwordLengthTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
+        jPanel1.add(passwordLengthTxt);
+        passwordLengthTxt.setBounds(350, 40, 60, 30);
 
-        upperCaseCB.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        upperCaseCB.setText("Upper Case");
+        lowerCase.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        lowerCase.setText("Lower Case");
+        lowerCase.setContentAreaFilled(false);
+        jPanel1.add(lowerCase);
+        lowerCase.setBounds(30, 100, 120, 27);
 
-        numberCB.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        numberCB.setText("Number");
+        upperCase.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        upperCase.setText("Upper Case");
+        upperCase.setContentAreaFilled(false);
+        jPanel1.add(upperCase);
+        upperCase.setBounds(150, 100, 120, 25);
 
-        specialChractersCB.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        specialChractersCB.setText("Special Characters");
+        number.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        number.setText("Number");
+        number.setContentAreaFilled(false);
+        jPanel1.add(number);
+        number.setBounds(270, 100, 89, 27);
 
-        generateButton.setBackground(new java.awt.Color(102, 0, 0));
-        generateButton.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        generateButton.setText("Generate");
-        generateButton.addActionListener(new java.awt.event.ActionListener() {
+        specialCharacters.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        specialCharacters.setText("Special Characters");
+        specialCharacters.setContentAreaFilled(false);
+        jPanel1.add(specialCharacters);
+        specialCharacters.setBounds(360, 100, 170, 27);
+
+        generate.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        generate.setText("GENERATE");
+        generate.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 0, 4, new java.awt.Color(243, 20, 20)), javax.swing.BorderFactory.createMatteBorder(0, 4, 4, 0, new java.awt.Color(0, 0, 0))));
+        generate.setContentAreaFilled(false);
+        generate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generateButtonActionPerformed(evt);
+                generateActionPerformed(evt);
             }
         });
+        jPanel1.add(generate);
+        generate.setBounds(210, 140, 140, 29);
 
-        passwordOutput.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        output.setEditable(false);
+        output.setBackground(new java.awt.Color(0, 0, 0));
+        output.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        output.setForeground(new java.awt.Color(255, 255, 255));
+        output.setActionCommand("<Not Set>");
+        output.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 4, 4, 0, new java.awt.Color(243, 20, 20)));
+        jPanel1.add(output);
+        output.setBounds(170, 200, 220, 40);
 
-        copyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/copyBlack.png"))); // NOI18N
-        copyButton.addActionListener(new java.awt.event.ActionListener() {
+        coppy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/copyBlack.png"))); // NOI18N
+        coppy.setContentAreaFilled(false);
+        coppy.setFocusPainted(false);
+        coppy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                copyButtonActionPerformed(evt);
+                coppyActionPerformed(evt);
             }
         });
+        jPanel1.add(coppy);
+        coppy.setBounds(390, 200, 30, 24);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/randomBG.jpg"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 600, 262);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(passwordLengthText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(lowerCaseCB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(upperCaseCB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(numberCB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(specialChractersCB)))
-                .addContainerGap(44, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(generateButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(passwordOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(copyButton)))
-                .addGap(103, 103, 103))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordLengthText))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lowerCaseCB)
-                    .addComponent(upperCaseCB)
-                    .addComponent(numberCB)
-                    .addComponent(specialChractersCB))
-                .addGap(18, 18, 18)
-                .addComponent(generateButton)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(copyButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(passwordOutput, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addGap(32, 32, 32))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
-        if(passwordLengthText.getText().equals(""))
+    private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
+        if(passwordLengthTxt.getText().equals(""))
             JOptionPane.showMessageDialog(this, "Password length cannot be blank.");
-        else if(Integer.parseInt(passwordLengthText.getText()) <= 0)
+        else if(Integer.parseInt(passwordLengthTxt.getText()) <= 0)
             JOptionPane.showMessageDialog(this, "Please enter a valid number.");
-        else if(!lowerCaseCB.isSelected() && !upperCaseCB.isSelected() && !numberCB.isSelected() && !specialChractersCB.isSelected())
+        else if(!lowerCase.isSelected() && !upperCase.isSelected() && !number.isSelected() && !specialCharacters.isSelected())
             JOptionPane.showMessageDialog(this, "Please select one of the types.");
         else
             generatePassword();
-    }//GEN-LAST:event_generateButtonActionPerformed
+    }//GEN-LAST:event_generateActionPerformed
 
-    private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
-        StringSelection stringSelection = new StringSelection(passwordOutput.getText());
+    private void coppyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coppyActionPerformed
+        StringSelection stringSelection = new StringSelection(output.getText());
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
         JOptionPane.showMessageDialog(this, "Is copied.");
-    }//GEN-LAST:event_copyButtonActionPerformed
+    }//GEN-LAST:event_coppyActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -203,14 +204,16 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton copyButton;
-    private javax.swing.JButton generateButton;
+    private javax.swing.JButton coppy;
+    private javax.swing.JButton generate;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JCheckBox lowerCaseCB;
-    private javax.swing.JCheckBox numberCB;
-    private javax.swing.JTextField passwordLengthText;
-    private javax.swing.JTextField passwordOutput;
-    private javax.swing.JCheckBox specialChractersCB;
-    private javax.swing.JCheckBox upperCaseCB;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JCheckBox lowerCase;
+    private javax.swing.JCheckBox number;
+    private javax.swing.JTextField output;
+    private javax.swing.JLabel passwordLengthLabel;
+    private javax.swing.JTextField passwordLengthTxt;
+    private javax.swing.JCheckBox specialCharacters;
+    private javax.swing.JCheckBox upperCase;
     // End of variables declaration//GEN-END:variables
 }
