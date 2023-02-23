@@ -77,7 +77,7 @@ public class Main extends javax.swing.JFrame {
         passwordLengthTxt.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         passwordLengthTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
         jPanel1.add(passwordLengthTxt);
-        passwordLengthTxt.setBounds(340, 40, 60, 30);
+        passwordLengthTxt.setBounds(350, 40, 60, 30);
 
         lowerCase.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         lowerCase.setText("Lower Case");
