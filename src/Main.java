@@ -71,13 +71,13 @@ public class Main extends javax.swing.JFrame {
         passwordLengthLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
         passwordLengthLabel.setOpaque(true);
         jPanel1.add(passwordLengthLabel);
-        passwordLengthLabel.setBounds(170, 40, 180, 30);
+        passwordLengthLabel.setBounds(170, 40, 170, 30);
 
         passwordLengthTxt.setBackground(new java.awt.Color(242, 144, 59));
         passwordLengthTxt.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         passwordLengthTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 0, 4, 0, new java.awt.Color(0, 0, 0)));
         jPanel1.add(passwordLengthTxt);
-        passwordLengthTxt.setBounds(350, 40, 60, 30);
+        passwordLengthTxt.setBounds(340, 40, 60, 30);
 
         lowerCase.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         lowerCase.setText("Lower Case");
